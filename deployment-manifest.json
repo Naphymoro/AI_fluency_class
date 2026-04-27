@@ -1,0 +1,33 @@
+{
+  "package": "AIMS Agentic Research LMS Online Deployment",
+  "version": "online-v1",
+  "files": [
+    ".env.example",
+    "LOCAL_DEPLOYMENT_GUIDE.md",
+    "ONLINE_DEPLOYMENT_GUIDE.md",
+    "ONLINE_ENV_VARIABLES.md",
+    "ONLINE_TEST_PLAN.md",
+    "README.md",
+    "api/agent.js",
+    "api/arxiv-search.js",
+    "api/config.js",
+    "api/invite.js",
+    "api/search.js",
+    "docs/TESTING_CHECKLIST.md",
+    "index.html",
+    "lms-auth.js",
+    "package.json",
+    "supabase/schema.sql",
+    "vercel.json"
+  ],
+  "required_env": [
+    "OPENROUTER_API_KEY",
+    "SUPABASE_URL",
+    "SUPABASE_ANON_KEY",
+    "SUPABASE_SERVICE_ROLE_KEY"
+  ],
+  "optional_env": [
+    "SEMANTIC_SCHOLAR_API_KEY",
+    "CORE_API_KEY"
+  ]
+}

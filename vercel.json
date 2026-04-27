@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/course",
+      "destination": "/index.html"
+    }
+  ],
+  "functions": {
+    "api/agent.js": {
+      "maxDuration": 60
+    },
+    "api/search.js": {
+      "maxDuration": 30
+    },
+    "api/invite.js": {
+      "maxDuration": 30
+    },
+    "api/arxiv-search.js": {
+      "maxDuration": 30
+    }
+  }
+}
