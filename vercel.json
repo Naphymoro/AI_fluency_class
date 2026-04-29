@@ -1,23 +1,15 @@
 {
-  "version": 2,
-  "rewrites": [
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "headers": [
     {
-      "source": "/course",
-      "destination": "/index.html"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
     }
-  ],
-  "functions": {
-    "api/agent.js": {
-      "maxDuration": 60
-    },
-    "api/search.js": {
-      "maxDuration": 30
-    },
-    "api/invite.js": {
-      "maxDuration": 30
-    },
-    "api/arxiv-search.js": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }
