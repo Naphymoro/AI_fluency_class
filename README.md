@@ -1,55 +1,30 @@
-# AIMS Agentic Research LMS — Online Deployment Package
+# AIMS Agentic Research Course LMS
 
-This package is ready for online deployment with:
+This project is a deployable, local-first tutorial app for a hands-on AIMS research-writing session.
 
-- GitHub
-- Vercel
-- Supabase
-- OpenRouter
+## What it includes
 
-## Files
+- `index.html`: the main app interface
+- `api/agent.js`: a minimal API route that allows the frontend to stay stable in deployment
+- `vercel.json`: Vercel deployment settings
 
-```text
-index.html                  Main LMS/course interface
-api/agent.js                Real LLM thesis generation API
-api/search.js               Live literature crawler API
-api/arxiv-search.js         arXiv server-side proxy
-api/invite.js               Supabase student invitation API
-api/config.js               Public runtime config
-lms-auth.js                 Supabase magic-link login gate
-supabase/schema.sql         LMS database schema + RLS policies
-ONLINE_DEPLOYMENT_GUIDE.md  Step-by-step online deployment
-ONLINE_TEST_PLAN.md         Testing checklist
-.env.example                Environment variable template
-```
+## Deployment model
 
-## Deploy
+This build is designed to work well as a Git-based Vercel deployment.
 
-Read:
+- The interface is kept close to the original attached tutorial file.
+- The app defaults to a stable local-first mode.
+- If live scholarly APIs are unreliable, the crawler falls back to a clearly labeled local session library so the workshop can continue.
 
-```text
-ONLINE_DEPLOYMENT_GUIDE.md
-```
+## Recommended Git-to-Vercel flow
 
-## Minimum required keys
+1. Create or use a GitHub repository for this project.
+2. Import that repository into Vercel.
+3. Let Vercel detect the root automatically.
+4. Deploy.
 
-```text
-OPENROUTER_API_KEY
-SUPABASE_URL
-SUPABASE_ANON_KEY
-SUPABASE_SERVICE_ROLE_KEY
-```
+## Notes for the live session
 
-## Local preview
-
-```bash
-npm install
-cp .env.example .env.local
-npm run dev
-```
-
-Then open:
-
-```text
-http://localhost:3000
-```
+- Google Scholar is treated as a manual comparison step, not an automated scraper.
+- The dashboard tracks activity in the current browser session.
+- Export flows support Word-compatible output, LaTeX, and print-friendly PDF.
